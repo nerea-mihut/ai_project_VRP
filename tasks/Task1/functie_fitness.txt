@@ -1,1 +1,13 @@
 // functia in logic (matematic)
+
+// Cristi:
+
+(∑ Dij) / N + M
+
+∑ Dij - Suma distantelor parcurse
+N - Numarul nodurilor parcurse (numarul de distante)
+M - numar masini
+
+Explicatie: Suma distantelor penalizeaza distantele mari, impartirea la N pentru medie incurajeaza trecerea prin cat mai multe noduripentru, deci o solutie potentiala care trece prin mai 
+
+⁠
