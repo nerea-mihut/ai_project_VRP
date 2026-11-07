@@ -1,0 +1,136 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[romanian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{setspace}
+
+\geometry{margin=2.5cm}
+\onehalfspacing
+
+\begin{document}
+
+\begin{center}
+    {\Large \textbf{Optimizarea rutelor de distribuție utilizând un algoritm genetic}}\\[0.5cm]
+    {\large Problema de rutare a vehiculelor cu restricție de capacitate (CVRP)}
+\end{center}
+
+\section{Introducere}
+
+Problema de rutare a vehiculelor (\textit{Vehicle Routing Problem}, VRP) reprezintă o problemă importantă de optimizare combinatorială, întâlnită frecvent în domeniul logisticii și al distribuției mărfurilor. Problema constă în determinarea unui set de rute pentru o flotă de vehicule care pleacă dintr-un depozit comun, deservește un număr de clienți cu cereri cunoscute și revine la depozit, astfel încât costul total asociat transportului să fie minim.
+
+În contextul acestei lucrări, se analizează cazul unei fabrici producătoare de mici, care trebuie să aprovizioneze zilnic 125 de clienți, reprezentați de supermarketuri, măcelării și terase. Toate comenzile sunt colectate într-un singur depozit central, iar distribuția se realizează cu o flotă omogenă de dube frigorifice. Fiecare dubă are o capacitate maximă de încărcare de 1.500 kg.
+
+Fiecare client are o cerere cunoscută, cuprinsă între 15 kg și 200 kg. Fiecare client trebuie vizitat exact o singură dată, de către un singur vehicul. Nu se permit livrări parțiale și nu este permis ca un client să fie vizitat de mai multe vehicule.
+
+Problema analizată este o variantă a problemei de rutare a vehiculelor cu restricție de capacitate, cunoscută în literatură sub denumirea de \textit{Capacitated Vehicle Routing Problem} (CVRP). Scopul este determinarea rutelor pentru fiecare vehicul, astfel încât distanța totală parcursă de întreaga flotă să fie minimă, cu respectarea capacității maxime a fiecărei dube.
+
+Deoarece numărul de clienți este mare, spațiul soluțiilor posibile devine extrem de vast. Din acest motiv, în lucrarea de față se utilizează un algoritm genetic pentru rezolvarea problemei. Algoritmul genetic este o metodă de căutare și optimizare inspirată din principiile evoluției biologice, care operează asupra unei populații de soluții candidate.
+
+Obiectivul proiectului este implementarea unui algoritm genetic capabil să genereze rute fezabile și eficiente pentru problema de distribuție descrisă. Soluțiile obținute trebuie să respecte toate constrângerile operaționale și să minimizeze distanța totală parcursă de vehicule.
+
+\section{Formularea problemei}
+
+\subsection{Descrierea formală}
+
+Fie:
+\begin{itemize}
+    \item $0$ — depozitul central al fabricii;
+    \item $C=\{1,2,\ldots,125\}$ — mulțimea clienților care trebuie aprovizionați;
+    \item $q_i$ — cererea clientului $i$, exprimată în kilograme de mici;
+    \item $Q=1500$ kg — capacitatea maximă a unei dube frigorifice;
+    \item $d_{ij}$ — distanța dintre locațiile $i$ și $j$;
+    \item $R_k$ — ruta vehiculului $k$;
+    \item $m$ — numărul de vehicule utilizate în soluție.
+\end{itemize}
+
+Cererea fiecărui client este cuprinsă între 15 kg și 200 kg:
+\begin{equation}
+15 \leq q_i \leq 200, \qquad \forall i \in C
+\end{equation}
+
+O soluție a problemei este reprezentată printr-o mulțime de rute:
+\begin{equation}
+S=\{R_1,R_2,\ldots,R_m\}
+\end{equation}
+
+Fiecare rută conține o succesiune de clienți vizitați de un vehicul. Fiecare rută pornește de la depozit, vizitează clienții alocați vehiculului respectiv și revine la depozit.
+
+\subsection{Funcția obiectiv}
+
+Obiectivul problemei este minimizarea distanței totale parcurse de întreaga flotă de dube frigorifice. Algoritmul determină împărțirea celor 125 de clienți în rute și ordinea de vizitare a acestora, astfel încât suma distanțelor tuturor rutelor să fie minimă.
+
+Numărul de vehicule utilizate nu este un obiectiv de optimizare. Acesta rezultă din modalitatea în care clienții sunt alocați rutelor, cu respectarea capacității maxime de 1.500 kg pentru fiecare dubă.
+
+Funcția obiectiv este:
+\begin{equation}
+\min D(s)=\sum_{k=1}^{m}D(R_k)
+\end{equation}
+
+unde $D(s)$ reprezintă distanța totală a soluției $s$, iar $D(R_k)$ reprezintă distanța totală a rutei vehiculului $k$.
+
+Dacă ruta $R_k$ conține clienții $i_1,i_2,\ldots,i_{n_k}$, în această ordine, atunci distanța rutei este calculată astfel:
+\begin{equation}
+D(R_k)=d_{0,i_1}+\sum_{t=1}^{n_k-1}d_{i_t,i_{t+1}}+d_{i_{n_k},0}
+\end{equation}
+
+Prima distanță corespunde deplasării de la depozit către primul client, iar ultima distanță corespunde întoarcerii de la ultimul client către depozit.
+
+\subsection{Constrângerile problemei}
+
+Pentru ca o soluție să fie validă, trebuie respectate următoarele condiții.
+
+În primul rând, capacitatea fiecărei dube nu poate fi depășită:
+\begin{equation}
+\sum_{i\in R_k}q_i\leq 1500,\qquad \forall k=1,\ldots,m
+\end{equation}
+
+În al doilea rând, fiecare client trebuie să aparțină exact unei rute:
+\begin{equation}
+\bigcup_{k=1}^{m}R_k=C
+\end{equation}
+
+De asemenea, nu se permit vizite multiple sau livrări parțiale:
+\begin{equation}
+R_p\cap R_q=\emptyset,\qquad \forall p\neq q
+\end{equation}
+
+În final, fiecare rută pornește și se încheie la depozitul central $0$.
+
+Prima constrângere asigură că încărcătura totală a fiecărei dube nu depășește capacitatea de 1.500 kg. A doua și a treia constrângere garantează că fiecare dintre cei 125 de clienți este atribuit exact unui singur vehicul și este vizitat o singură dată. Ultima condiție impune ca fiecare rută să pornească și să se încheie la depozitul central.
+
+\subsection{Funcția de fitness}
+
+Deoarece algoritmul genetic poate genera, în fazele intermediare ale căutării, soluții care încalcă restricția de capacitate, se utilizează o funcție de fitness penalizată. Aceasta adaugă la distanța totală o penalizare proporțională cu excesul de încărcare al fiecărei rute.
+
+Astfel, soluțiile care respectă limita de 1.500 kg sunt preferate față de soluțiile nevalabile. Funcția de fitness este definită astfel:
+\begin{equation}
+F(s)=D(s)+\lambda\sum_{k=1}^{m}
+\max\left(0,\sum_{i\in R_k}q_i-1500\right)
+\end{equation}
+
+unde:
+\begin{itemize}
+    \item $F(s)$ — valoarea funcției de fitness a soluției $s$;
+    \item $D(s)$ — distanța totală parcursă de toate vehiculele;
+    \item $\lambda$ — coeficientul de penalizare pentru supraîncărcare;
+    \item $q_i$ — cererea clientului $i$;
+    \item $R_k$ — ruta vehiculului $k$;
+    \item $m$ — numărul de rute din soluție.
+\end{itemize}
+
+Termenul:
+\begin{equation}
+\max\left(0,\sum_{i\in R_k}q_i-1500\right)
+\end{equation}
+
+reprezintă excesul de încărcare pentru ruta $k$. Dacă încărcătura totală a rutei este mai mică sau egală cu 1.500 kg, atunci excesul este zero. Dacă capacitatea este depășită, excesul corespunde numărului de kilograme care depășesc limita permisă.
+
+Deoarece problema presupune minimizarea funcției de fitness, o valoare mai mică a acesteia indică o soluție mai bună. O soluție fezabilă are penalizare zero, iar valoarea funcției de fitness este egală cu distanța totală parcursă de vehicule.
+
+Penalizarea nu este inclusă în obiectivul problemei, ci în funcția de fitness utilizată de algoritmul genetic. Obiectivul rămâne minimizarea distanței totale, în timp ce penalizarea asigură ca soluțiile care depășesc capacitatea vehiculelor să fie dezavantajate în procesul de selecție.
+
+\end{document}
