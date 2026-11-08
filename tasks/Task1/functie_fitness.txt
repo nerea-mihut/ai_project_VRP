@@ -2,12 +2,14 @@
 
 // Cristi:
 
-(∑ Dij) / N + M
-
-∑ Dij - Suma distantelor parcurse
+min(f=(⁠∑ Dii+1) / N + M)
+      i=0
+∑ Dii+1 - Suma distantelor de la un nod (i) la urmatorul (i+1), incepand de la depozit (i=0)
 N - Numarul nodurilor parcurse (numarul de distante)
 M - numar masini
 
-Explicatie: Suma distantelor penalizeaza distantele mari, impartirea la N pentru medie incurajeaza trecerea prin cat mai multe noduripentru, deci o solutie potentiala care trece prin mai 
+Explicatie: Dorim un rezultat cat mai mic, deci minimul functiei. Suma distantelor penalizeaza idivizii cu distante mari, impartirea la N pentru medie incurajeaza trecerea prin cat mai multe noduri pentru un rezultat al functiei cat mai mic. Adunarea numarului de masini penalizeaza indivizii cu numar mai mare de masini.
 
-⁠
+
+​
+ 
