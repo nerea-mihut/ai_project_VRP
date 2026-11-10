@@ -1,0 +1,127 @@
+﻿id,tip,localitate,judet,latitudine,longitudine,cerere_kg
+0,depozit,Depozit București,București,44.4268,26.1025,0
+1,client,Bechet,Dolj,44.29,23.3,19
+2,client,Bumbueni,Arges,44.73,24.79,18
+3,client,Covasna,Covasna,45.85,26.18,177
+4,client,Rupea,Brasov,46.04,25.22,91
+5,client,Bistra,Bihor,47.25,22.42,195
+6,client,Pancota,Arad,46.33,21.69,164
+7,client,Bogata,Mures,46.46,24.12,55
+8,client,Bujoru,Teleorman,43.96,24.85,27
+9,client,Corod,Galati,45.9,27.63,163
+10,client,Satu Nou,Vaslui,46.7,27.75,48
+11,client,Rasova,Constanta,44.24,27.94,88
+12,client,Teasc,Dolj,44.16,23.86,28
+13,client,Cornesti,Bacau,46.77,26.93,37
+14,client,Apadia,Caras-Severin,45.39,22.05,109
+15,client,Purcaret,Salaj,47.37,23.44,131
+16,client,Mihalaseni,Botosani,47.88,27.07,123
+17,client,Arjoci,Gorj,44.98,22.95,115
+18,client,Mecea,Valcea,44.77,23.8,24
+19,client,Robanestii de Jos,Dolj,44.31,24.02,95
+20,client,Sacosu Turcesc,Timis,45.66,21.43,77
+21,client,Mazanaesti,Suceava,47.53,26.08,170
+22,client,Cojocani,Alba,46.28,23.37,26
+23,client,Vladesti,Alba,46.31,23.56,173
+24,client,Salatrucu,Arges,45.32,24.51,58
+25,client,Cosani,Valcea,45.01,24.19,188
+26,client,Munteni,Valcea,44.99,24.27,171
+27,client,Cap Rosu,Prahova,45.05,25.79,17
+28,client,Mihailesti,Giurgiu,44.32,25.92,70
+29,client,Badeuti,Suceava,47.8,25.98,185
+30,client,Cerna-Varf,Mehedinti,44.92,22.68,181
+31,client,Pacuri,Prahova,45.19,26.16,163
+32,client,Dobriceni,Valcea,45.16,24.14,156
+33,client,Branesti,Gorj,44.65,23.46,115
+34,client,Cascioarele,Giurgiu,44.52,25.75,85
+35,client,Cenad,Timis,46.13,20.58,77
+36,client,Gheraesti,Neamt,47.02,26.82,91
+37,client,Rediu Mitropoliei,Iasi,47.3,27.49,54
+38,client,Bantesti,Valcea,44.68,24.08,49
+39,client,Monariu,Bistrita-Nasaud,47.07,24.48,73
+40,client,Ghilesti,Satu Mare,47.54,22.59,87
+41,client,Sumandra,Dolj,44.46,23.29,30
+42,client,Bulgari,Salaj,47.34,23.14,36
+43,client,Magazia,Neamt,47.1,26.26,198
+44,client,Calacea,Salaj,47.12,23.45,100
+45,client,Malu,Arges,44.46,24.78,121
+46,client,Berzovia,Caras-Severin,45.43,21.63,187
+47,client,Leurda,Cluj,47.26,23.91,93
+48,client,Mosna,Dolj,44.34,23.37,141
+49,client,Galda de Jos,Alba,46.18,23.62,129
+50,client,Ciocesti,Arges,44.45,24.78,139
+51,client,Bucium,Neamt,46.78,27.07,153
+52,client,Magurele,Tulcea,44.9,28.24,87
+53,client,Padureni,Arges,44.71,24.99,84
+54,client,Chiris,Cluj,46.88,24.04,87
+55,client,Vata de Sus,Hunedoara,46.17,22.57,118
+56,client,Varsand,Arad,46.62,21.34,49
+57,client,Boianu Mare,Bihor,47.38,22.52,171
+58,client,Jeristea,Gorj,45.12,23.53,99
+59,client,Globurau,Caras-Severin,45.01,22.37,85
+60,client,Ocna Sibiului,Sibiu,45.88,24.05,157
+61,client,Leamna de Sus,Dolj,44.3,23.68,134
+62,client,Somcutu Mic,Cluj,47.16,23.76,49
+63,client,Valea Crangului,Prahova,44.99,26.26,69
+64,client,Densus,Hunedoara,45.58,22.8,58
+65,client,Balilesti,Arges,45.14,24.54,118
+66,client,Calatani,Bihor,47.05,22.2,22
+67,client,Milova,Arad,46.11,21.8,132
+68,client,Somusca,Bacau,46.4,26.91,160
+69,client,Nepos,Bistrita-Nasaud,47.28,24.53,64
+70,client,Pata,Cluj,46.73,23.75,59
+71,client,Dedulesti,Arges,45.02,24.54,108
+72,client,Cojani,Gorj,45.0,23.55,91
+73,client,Ungureni,Vrancea,45.81,26.67,145
+74,client,Unghi,Neamt,47.04,26.56,92
+75,client,Abud,Mures,46.53,24.92,79
+76,client,Mucesti-Danulesti,Buzau,45.52,26.93,25
+77,client,Stoenesti,Valcea,45.12,24.16,172
+78,client,Malureni,Arges,45.1,24.8,87
+79,client,Izvoru Muresului,Harghita,46.63,25.68,113
+80,client,Lunca,Neamt,47.23,26.3,179
+81,client,Preotesti,Olt,44.53,23.99,92
+82,client,Cosambesti,Ialomita,44.56,27.44,104
+83,client,Bocicoel,Maramures,47.7,24.32,129
+84,client,Serboeni,Arges,44.64,24.89,95
+85,client,Brebina,Teleorman,44.17,24.97,184
+86,client,Betesti,Neamt,46.74,26.58,192
+87,client,Bencecu de Sus,Timis,45.88,21.43,51
+88,client,Sarazani,Timis,45.74,22.06,70
+89,client,Dealu Mare,Cluj,46.72,23.16,90
+90,client,Spinesti,Vrancea,45.89,26.71,71
+91,client,Dealu Bisericii,Arges,44.87,24.6,158
+92,client,Ceplenita,Iasi,47.38,26.96,72
+93,client,Cublesu,Salaj,46.93,23.32,69
+94,client,Bozienii de Sus,Neamt,46.96,26.71,47
+95,client,Rogoz de Beliu,Arad,46.61,22.01,63
+96,client,Branistea,Galati,45.95,27.33,191
+97,client,Giurgis,Mures,46.52,23.97,146
+98,client,Crivesti,Iasi,47.2,26.93,31
+99,client,Bojila,Iasi,47.02,27.27,72
+100,client,Golotreni,Valcea,45.34,24.28,15
+101,client,Fersig,Maramures,47.54,23.38,168
+102,client,Cormenis,Salaj,47.35,23.52,127
+103,client,Vlaici,Olt,44.65,24.66,42
+104,client,Greblesti,Valcea,45.48,24.31,92
+105,client,Zasloane,Caras-Severin,44.71,21.83,187
+106,client,Purcareti,Alba,45.83,23.49,83
+107,client,Fedeleseni,Iasi,47.12,26.98,146
+108,client,Rediu Galian,Vaslui,46.89,27.73,181
+109,client,Doanca,Olt,43.85,24.65,139
+110,client,Andici,Cluj,46.65,23.92,42
+111,client,Preajba,Teleorman,44.43,25.36,190
+112,client,Stancesti,Botosani,47.74,26.6,87
+113,client,Santionlunca,Covasna,45.82,25.88,127
+114,client,Budesti,Buzau,45.45,26.55,167
+115,client,Bogdanesti,Alba,46.36,22.99,97
+116,client,Bucuroaia,Bihor,46.93,22.18,151
+117,client,Atintis,Mures,46.43,24.11,128
+118,client,Pegeni,Gorj,44.79,23.64,185
+119,client,Dumiresti,Arges,45.25,24.7,195
+120,client,Dumbrava,Bacau,46.31,26.89,69
+121,client,Ijdileni,Galati,45.64,28.06,133
+122,client,Sanmartin,Harghita,46.27,25.95,43
+123,client,Chiscareni,Botosani,47.96,26.83,130
+124,client,Coropceni,Iasi,46.94,27.84,170
+125,client,Cil,Arad,46.28,22.26,18
