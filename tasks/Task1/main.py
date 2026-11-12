@@ -1,5 +1,9 @@
-//fitness function si reprezentarea individului
+# fitness function si reprezentarea individului
 
-def individ: 
+# Reprezentarea indivizilor:
 
-def fitness: 
+individ = [ [] for _ in range(10)]
+print(individ)
+
+def fitness():
+    return 
