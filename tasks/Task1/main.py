@@ -13,7 +13,7 @@ dim_populatie = 10 #nr de indivizi per generatie
 
 def generatie_initiala():
     populatie = []
-    for i in range (dim_populatie + 1):
+    for i in range (dim_populatie):
         individ = list(range(1, nr_clienti+1))
         random.shuffle(individ) #amestec clientii ca sa fie random in lista
         populatie.append(individ)
